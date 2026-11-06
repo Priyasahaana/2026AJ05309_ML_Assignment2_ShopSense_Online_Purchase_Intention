@@ -1,0 +1,35 @@
+{
+  "project": "ShopSense \u2014 Online Purchase Intention Analytics",
+  "dataset": "UCI Online Shoppers Purchasing Intention",
+  "uci_dataset_id": 468,
+  "target_column": "Revenue",
+  "target_mapping": {
+    "0": "No purchase",
+    "1": "Purchase"
+  },
+  "numerical_features": [
+    "Administrative",
+    "Administrative_Duration",
+    "Informational",
+    "Informational_Duration",
+    "ProductRelated",
+    "ProductRelated_Duration",
+    "BounceRates",
+    "ExitRates",
+    "PageValues",
+    "SpecialDay"
+  ],
+  "categorical_features": [
+    "Month",
+    "OperatingSystems",
+    "Browser",
+    "Region",
+    "TrafficType",
+    "VisitorType",
+    "Weekend"
+  ],
+  "random_state": 42,
+  "test_size": 0.2,
+  "scikit_learn_version": "1.6.1",
+  "provisional_winner_by_auc": "Decision Tree"
+}
