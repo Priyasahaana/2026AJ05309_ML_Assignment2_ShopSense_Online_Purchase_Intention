@@ -34,11 +34,11 @@ All five classifiers were trained and evaluated using the same stratified traini
 
 | ML Model Name | Observation about model performance |
 |---|---|
-| Decision Tree | Add your own observation based on its Accuracy, AUC, Precision, Recall, F1, MCC and confusion matrix. |
-| Logistic Regression | Add your own observation based on its Accuracy, AUC, Precision, Recall, F1, MCC and confusion matrix. |
-| Support Vector Machine | Add your own observation based on its Accuracy, AUC, Precision, Recall, F1, MCC and confusion matrix. |
-| KNN | Add your own observation based on its Accuracy, AUC, Precision, Recall, F1, MCC and confusion matrix. |
-| Naive Bayes | Add your own observation based on its Accuracy, AUC, Precision, Recall, F1, MCC and confusion matrix. |
+| Decision Tree | The Decision Tree gave the best overall results among the five models. It achieved the highest AUC (0.8887), F1 score (0.5736) and MCC (0.5211), while sharing the highest accuracy (88.73%) with SVM. Its precision and recall were reasonably balanced, making it a good choice for this dataset. |
+| Logistic Regression | Logistic Regression achieved the highest precision (0.7366), so its positive predictions were comparatively reliable. However, its recall was only 0.3586, meaning it failed to identify a considerable number of actual purchase sessions. Its overall performance was good, but it was less effective at detecting purchases. |
+| Support Vector Machine | SVM performed close to the Decision Tree, with the same accuracy of 88.73% and an F1 score of 0.5629. Its precision and recall were fairly balanced, and its MCC of 0.5149 indicates good predictive performance. However, it did not outperform the Decision Tree across the overall comparison. |
+| KNN | KNN achieved an accuracy of 87.23%, but its recall was relatively low at 0.3010. This suggests that it missed many actual purchase sessions despite having reasonable precision. Its lower AUC and F1 score also indicate that it was less effective than Decision Tree, Logistic Regression and SVM for this dataset. |
+| Naive Bayes | Naive Bayes identified most actual purchase sessions, achieving the highest recall of 0.9738. However, its accuracy (27.29%) and precision (0.1726) were very low. This suggests that it predicted purchases too frequently, resulting in many false positives. Its overall performance was the weakest among the five models. |
 
 ### Overall winner for the dataset
 
