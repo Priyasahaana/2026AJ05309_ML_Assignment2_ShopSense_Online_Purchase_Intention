@@ -42,8 +42,6 @@ All five classifiers were trained and evaluated using the same stratified traini
 
 ### Overall winner for the dataset
 
-**Provisional winner based on ROC-AUC:** Decision Tree
-
 **Overall winner based on average ranking across the six evaluation metrics:** Decision Tree
 
 The final selection should also consider the confusion matrices and the relative importance of false positives and false negatives.
