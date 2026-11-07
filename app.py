@@ -358,37 +358,52 @@ try:
     )
 
     # -------------------- AUTOMATIC INTERPRETATION --------------------
+    # SHOPSENSE_READABLE_INSIGHT_CARDS
     best_f1 = comparison_df.loc[comparison_df["F1"].idxmax()]
     best_recall = comparison_df.loc[comparison_df["Recall"].idxmax()]
     best_precision = comparison_df.loc[comparison_df["Precision"].idxmax()]
     best_auc = comparison_df.loc[comparison_df["AUC"].idxmax()]
-
     st.markdown("## What do these results tell us?")
     insight1, insight2 = st.columns(2)
-
     with insight1:
-        st.success(
-            f"**Best F1-score:** {best_f1['ML Model Name']} "
-            f"({best_f1['F1']:.4f}). "
-            "F1 balances precision and recall."
+        st.markdown(
+            f"""
+            <div style="background-color:#FFFFFF;border:1px solid #C6D9F5;border-left:5px solid #2563EB;border-radius:12px;padding:20px;margin-bottom:14px;min-height:82px;">
+                <span style="color:#14243B;font-weight:800;">Best F1-score:</span>
+                <span style="color:#334155;"> {best_f1['ML Model Name']} ({best_f1['F1']:.4f}). F1 balances precision and recall.</span>
+            </div>
+            """,
+            unsafe_allow_html=True
         )
-        st.info(
-            f"**Best ROC-AUC:** {best_auc['ML Model Name']} "
-            f"({best_auc['AUC']:.4f}). "
-            "This model has the strongest ranking ability."
+        st.markdown(
+            f"""
+            <div style="background-color:#FFFFFF;border:1px solid #C6D9F5;border-left:5px solid #2563EB;border-radius:12px;padding:20px;margin-bottom:14px;min-height:82px;">
+                <span style="color:#14243B;font-weight:800;">Best ROC-AUC:</span>
+                <span style="color:#334155;"> {best_auc['ML Model Name']} ({best_auc['AUC']:.4f}). This model has the strongest ranking ability.</span>
+            </div>
+            """,
+            unsafe_allow_html=True
         )
-
     with insight2:
-        st.warning(
-            f"**Best recall:** {best_recall['ML Model Name']} "
-            f"({best_recall['Recall']:.4f}). "
-            "It identifies the largest share of actual purchases."
+        st.markdown(
+            f"""
+            <div style="background-color:#FFFFFF;border:1px solid #C6D9F5;border-left:5px solid #2563EB;border-radius:12px;padding:20px;margin-bottom:14px;min-height:82px;">
+                <span style="color:#14243B;font-weight:800;">Best recall:</span>
+                <span style="color:#334155;"> {best_recall['ML Model Name']} ({best_recall['Recall']:.4f}). It identifies the largest share of actual purchases.</span>
+            </div>
+            """,
+            unsafe_allow_html=True
         )
-        st.info(
-            f"**Best precision:** {best_precision['ML Model Name']} "
-            f"({best_precision['Precision']:.4f}). "
-            "Its positive purchase predictions are the most precise."
+        st.markdown(
+            f"""
+            <div style="background-color:#FFFFFF;border:1px solid #C6D9F5;border-left:5px solid #2563EB;border-radius:12px;padding:20px;margin-bottom:14px;min-height:82px;">
+                <span style="color:#14243B;font-weight:800;">Best precision:</span>
+                <span style="color:#334155;"> {best_precision['ML Model Name']} ({best_precision['Precision']:.4f}). Its positive purchase predictions are the most precise.</span>
+            </div>
+            """,
+            unsafe_allow_html=True
         )
+        
 
     # -------------------- VISUAL ANALYTICS --------------------
     st.markdown("## Visual model analysis")
