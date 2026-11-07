@@ -112,6 +112,43 @@ try:
         "MCC": matthews_corrcoef(y_true, y_pred)
     }
 
+
+    # ALL_FIVE_MODEL_COMPARISON_TABLE
+    st.subheader("Comparison of all five classification models")
+    comparison_rows = []
+    for comparison_name, comparison_filename in MODEL_FILES.items():
+        comparison_path = MODEL_DIR / comparison_filename
+        comparison_pipeline = load_model(str(comparison_path))
+        comparison_predictions = comparison_pipeline.predict(X_uploaded)
+        comparison_scores = comparison_pipeline.predict_proba(X_uploaded)[:, 1]
+        comparison_auc = (
+            roc_auc_score(y_true, comparison_scores)
+            if len(np.unique(y_true)) == 2 else np.nan
+        )
+        comparison_rows.append({
+            "ML Model Name": comparison_name,
+            "Accuracy": accuracy_score(y_true, comparison_predictions),
+            "AUC": comparison_auc,
+            "Precision": precision_score(y_true, comparison_predictions, zero_division=0),
+            "Recall": recall_score(y_true, comparison_predictions, zero_division=0),
+            "F1": f1_score(y_true, comparison_predictions, zero_division=0),
+            "MCC": matthews_corrcoef(y_true, comparison_predictions)
+        })
+    comparison_df = pd.DataFrame(comparison_rows)
+    st.dataframe(
+        comparison_df.style.format({
+            "Accuracy": "{:.4f}",
+            "AUC": "{:.4f}",
+            "Precision": "{:.4f}",
+            "Recall": "{:.4f}",
+            "F1": "{:.4f}",
+            "MCC": "{:.4f}"
+        }),
+        use_container_width=True,
+        hide_index=True
+    )
+    st.caption("All five saved models are evaluated on the same uploaded labelled test data. No retraining is performed.")
+
     st.subheader(f"Results · {selected_model}")
     st.caption(f"Evaluated {len(test_df):,} labelled sessions.")
     metric_cols = st.columns(3)
