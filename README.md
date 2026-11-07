@@ -67,7 +67,26 @@ streamlit run app.py
 - `2026AJ05309_MACHINE_LEARNING_AIMLZG565_Assignment2.ipynb` — complete notebook source code
 
 ## Live Streamlit application
-Add the deployed Streamlit Community Cloud URL here after deployment.
+
+**ShopSense interactive dashboard:**
+
+[Open the Live ShopSense Application](https://2026aj05309mlassignment2shopsenseonlinepurchaseintention-znzlc.streamlit.app/)
+
+The application allows users to upload labelled test data, select one of five saved classifiers, view six evaluation metrics, compare model performance, and explore ROC curves and confusion matrices. The application evaluates uploaded data without retraining the models.
 
 ## BITS Virtual Lab evidence
-The required BITS Virtual Lab execution screenshot will be included in the final assignment PDF. A Colab execution screenshot does not replace this evidence.
+
+The following screenshots provide evidence of the assignment execution in BITS Virtual Lab.
+
+### Screenshot 1 — BITS Virtual Lab execution
+
+![BITS Virtual Lab execution screenshot 1](assets/2026AJ05309_ML_Screenshot1OfLabExecution.png)
+
+### Screenshot 2 — BITS Virtual Lab execution
+
+![BITS Virtual Lab execution screenshot 2](assets/2026AJ05309_ML_Screenshot2OfLabExecution.png)
+
+### Screenshot 3 — BITS Virtual Lab execution
+
+![BITS Virtual Lab execution screenshot 3](assets/2026AJ05309_ML_Screenshot3OfLabExecution.png)
+
