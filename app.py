@@ -175,9 +175,15 @@ if uploaded_file is None:
         "Upload the labelled `test_data.csv` file using the sidebar "
         "to begin evaluating the five saved classifiers."
     )
-    st.info(
-        "The uploaded file must contain all 17 input features and "
-        "the Revenue target column."
+    # SHOPSENSE_WHITE_INFORMATION_MESSAGE
+    st.markdown(
+        """
+        <div style="color:#FFFFFF !important;">
+            The uploaded file must contain all 17 input features and
+            the Revenue target column.
+        </div>
+        """,
+        unsafe_allow_html=True
     )
     st.markdown("### What you can explore")
     col1, col2, col3 = st.columns(3)
@@ -611,44 +617,6 @@ div[data-testid="stAlert"] b {
 }
 
 /* Keep alert icons visible */
-div[data-testid="stAlert"] svg {
-    color: #2563EB !important;
-    fill: #2563EB !important;
-}
-</style>
-""", unsafe_allow_html=True)
-
-
-# SHOPSENSE_INFORMATION_BOX_VISIBILITY_FIX
-st.markdown("""
-<style>
-/* Information box background and border */
-div[data-testid="stAlert"] {
-    background: #FFFFFF !important;
-    background-color: #FFFFFF !important;
-    border: 1px solid #C6D9F5 !important;
-    border-left: 5px solid #2563EB !important;
-    border-radius: 12px !important;
-    padding: 16px 19px !important;
-    box-shadow: 0 3px 10px rgba(30,64,120,0.07) !important;
-}
-
-/* Keep nested information box backgrounds transparent */
-div[data-testid="stAlert"] > div {
-    background: transparent !important;
-    background-color: transparent !important;
-}
-
-/* Make all information box text readable */
-div[data-testid="stAlert"] p,
-div[data-testid="stAlert"] span,
-div[data-testid="stAlert"] div,
-div[data-testid="stAlert"] label {
-    color: #334155 !important;
-    opacity: 1 !important;
-}
-
-/* Keep information box icons visible */
 div[data-testid="stAlert"] svg {
     color: #2563EB !important;
     fill: #2563EB !important;
