@@ -564,3 +564,42 @@ except Exception as exc:
         "Check that the uploaded CSV contains all 17 expected input "
         "features and a valid Revenue target."
     )
+
+
+# SHOPSENSE_FINAL_INSIGHT_TEXT_CONTRAST_OVERRIDE
+st.markdown("""
+<style>
+/* White background and clear borders for insight messages */
+div[data-testid="stAlert"] {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    border: 1px solid #C6D9F5 !important;
+    border-left: 5px solid #2563EB !important;
+    border-radius: 12px !important;
+    padding: 16px 19px !important;
+    box-shadow: 0 3px 10px rgba(30,64,120,0.07) !important;
+}
+
+/* Dark, readable text throughout the insight boxes */
+div[data-testid="stAlert"] p,
+div[data-testid="stAlert"] span,
+div[data-testid="stAlert"] div,
+div[data-testid="stAlert"] label {
+    color: #334155 !important;
+    opacity: 1 !important;
+}
+
+/* Make the four insight headings especially prominent */
+div[data-testid="stAlert"] strong,
+div[data-testid="stAlert"] b {
+    color: #102A4C !important;
+    font-weight: 800 !important;
+}
+
+/* Keep alert icons visible */
+div[data-testid="stAlert"] svg {
+    color: #2563EB !important;
+    fill: #2563EB !important;
+}
+</style>
+""", unsafe_allow_html=True)
